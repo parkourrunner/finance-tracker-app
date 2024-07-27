@@ -19,10 +19,12 @@ router.get("/getAllByUserId/:userId", async (req: Request, res: Response) => {
 router.post("/", async (req: Request, res: Response) => {
   try {
     const newRecordBody = req.body;
+    console.log(newRecordBody)
     const newRecord = new FinancialRecordModel(newRecordBody);
     const savedRecord = await newRecord.save();
     res.status(200).send(savedRecord);
   } catch (error) {
+    console.log(error)
     res.status(500).send(error);
   }
 });

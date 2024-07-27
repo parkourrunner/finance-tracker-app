@@ -9,7 +9,7 @@ interface FinancialRecord {
   paymentMethod: string;
 }
 
-const finantialRecordSchema = new mongoose.Schema<FinancialRecord>({
+const financialRecordSchema = new mongoose.Schema<FinancialRecord>({
   userId: { type: String, required: true },
   date: { type: Date, required: true },
   description: { type: String, required: true },
@@ -20,7 +20,7 @@ const finantialRecordSchema = new mongoose.Schema<FinancialRecord>({
 
 const FinancialRecordModel = mongoose.model<FinancialRecord>(
   "FinancialRecord",
-  finantialRecordSchema
+  financialRecordSchema
 );
 
 
